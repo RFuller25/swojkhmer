@@ -1,0 +1,396 @@
+/* ===========================
+   SWOJ Khmer — Shared Styles
+   Cambodia flag palette:
+     Blue  #032EA1
+     Red   #CC0001
+     White #FFFFFF
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;600;700&family=Noto+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+:root {
+  --blue:       #032EA1;
+  --blue-dark:  #021e70;
+  --blue-light: #e8eeff;
+  --red:        #CC0001;
+  --red-dark:   #a30001;
+  --white:      #ffffff;
+  --off-white:  #f7f8fc;
+  --text:       #1a1a2e;
+  --text-muted: #5a607a;
+  --radius:     10px;
+  --shadow-sm:  0 2px 8px rgba(3,46,161,0.10);
+  --shadow-md:  0 6px 24px rgba(3,46,161,0.18);
+  --shadow-lg:  0 12px 40px rgba(3,46,161,0.22);
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HERO / INDEX ─────────────────────────────── */
+
+.hero {
+  min-height: 100svh;
+  background: var(--blue);
+  background-image: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue) 60%, #1040c8 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle flag-stripe accent */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--red);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--red);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo {
+  width: min(260px, 65vw);
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.35));
+}
+
+.greeting-km {
+  font-family: 'Noto Serif Khmer', serif;
+  font-size: clamp(1.15rem, 4.5vw, 1.6rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.greeting-en {
+  font-size: clamp(0.78rem, 2.8vw, 0.95rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+.scroll-hint {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: nudge 2.2s ease-in-out infinite;
+}
+
+.scroll-hint svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes nudge {
+  0%, 100% { transform: translateY(0);   opacity: .5; }
+  50%       { transform: translateY(6px); opacity: .85; }
+}
+
+/* ─── RESOURCES SECTION (INDEX) ───────────────── */
+
+.resources-section {
+  padding: 2.5rem 1rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.section-title {
+  font-family: 'Noto Serif Khmer', serif;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+/* Grid: 2 cols on mobile, 3 on tablet, 4 on desktop */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+@media (min-width: 580px) {
+  .resources-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .resources-grid { grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+}
+
+.resource-card {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  background: var(--off-white);
+  /* transition for desktop hover */
+  transition: transform var(--transition), box-shadow var(--transition);
+  /* keep cards proportional */
+  aspect-ratio: 3/4;
+  position: relative;
+}
+
+.resource-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition);
+}
+
+/* Desktop-only hover: grow card */
+@media (hover: hover) and (pointer: fine) {
+  .resource-card:hover {
+    transform: scale(1.07);
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+  }
+}
+
+/* Touch active feedback */
+.resource-card:active {
+  transform: scale(0.96);
+}
+
+/* ─── FOOTER ───────────────────────────────────── */
+
+.site-footer {
+  background: var(--blue);
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  padding: 1.25rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+/* ─── RESOURCE DETAIL PAGE ─────────────────────── */
+
+.resource-page-header {
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+
+.back-btn:hover,
+.back-btn:focus {
+  opacity: 1;
+  background: rgba(255,255,255,0.12);
+}
+
+.back-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.header-logo-mini {
+  height: 32px;
+  width: auto;
+  opacity: 0.88;
+}
+
+.resource-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 3rem;
+}
+
+.resource-cover-wrap {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.resource-cover {
+  max-width: min(320px, 80vw);
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  display: inline-block;
+}
+
+.resource-title {
+  font-family: 'Noto Serif Khmer', serif;
+  font-size: clamp(1.1rem, 4vw, 1.45rem);
+  font-weight: 600;
+  color: var(--blue);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.resource-description {
+  font-family: 'Noto Serif Khmer', serif;
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: var(--off-white);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.resource-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.02em;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  box-shadow: 0 3px 12px rgba(204,0,1,0.3);
+}
+
+.btn-primary:hover {
+  background: var(--red-dark);
+  box-shadow: 0 5px 18px rgba(204,0,1,0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-secondary {
+  background: var(--blue-light);
+  color: var(--blue);
+  border: 2px solid rgba(3,46,161,0.18);
+}
+
+.btn-secondary:hover {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ─── RESPONSIVE TWEAKS ─────────────────────────── */
+
+@media (min-width: 600px) {
+  .resource-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .btn {
+    width: auto;
+    flex: 1 1 200px;
+  }
+}

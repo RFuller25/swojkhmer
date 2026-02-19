@@ -84,7 +84,7 @@ body {
 }
 
 .logo {
-  width: min(260px, 65vw);
+  width: min(360px, 80vw);
   height: auto;
   filter: drop-shadow(0 4px 20px rgba(0,0,0,0.35));
 }
@@ -184,15 +184,11 @@ body {
   background: var(--off-white);
   /* transition for desktop hover */
   transition: transform var(--transition), box-shadow var(--transition);
-  /* keep cards proportional */
-  aspect-ratio: 3/4;
-  position: relative;
 }
 
 .resource-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform var(--transition);
 }
@@ -431,6 +427,9 @@ body {
   right: 1.25rem;
   z-index: 10;
 }
+
+/* Hide the Khmer subtitle when in English mode */
+body.lang-en .greeting-en { display: none; }
 
 /* Switch to latin font in English mode for Khmer-font elements */
 body.lang-en .resource-title,

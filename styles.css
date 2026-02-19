@@ -382,6 +382,64 @@ body {
   transform: translateY(0) scale(0.98);
 }
 
+/* ─── LANGUAGE TOGGLE ──────────────────────────── */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.lang-toggle {
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: var(--white);
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.65rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  line-height: 1.4;
+  transition: background var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  background: rgba(255,255,255,0.28);
+  border-color: rgba(255,255,255,0.6);
+}
+
+.lang-sep {
+  opacity: 0.45;
+  font-weight: 300;
+}
+
+.lang-toggle[data-current="km"] .lang-km-label { opacity: 1;    font-weight: 700; }
+.lang-toggle[data-current="km"] .lang-en-label { opacity: 0.45; font-weight: 400; }
+.lang-toggle[data-current="en"] .lang-en-label { opacity: 1;    font-weight: 700; }
+.lang-toggle[data-current="en"] .lang-km-label { opacity: 0.45; font-weight: 400; }
+
+/* Hero: position toggle button in top-right corner */
+.lang-toggle-hero {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+}
+
+/* Switch to latin font in English mode for Khmer-font elements */
+body.lang-en .resource-title,
+body.lang-en .resource-description,
+body.lang-en .greeting-km,
+body.lang-en .section-title {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 /* ─── RESPONSIVE TWEAKS ─────────────────────────── */
 
 @media (min-width: 600px) {

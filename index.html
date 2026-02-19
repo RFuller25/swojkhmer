@@ -12,17 +12,24 @@
 
   <!-- ── HERO ── -->
   <header class="hero">
+
+    <button class="lang-toggle lang-toggle-hero" data-current="km" aria-label="Switch to English">
+      <span class="lang-km-label">ខ្មែរ</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-en-label">EN</span>
+    </button>
+
     <div class="hero-content">
       <img
         src="resources/swoj_khmer_logo.png"
         alt="SWOJ Khmer Logo"
         class="logo"
       >
-      <p class="greeting-km">ស្វាគមន៍មកកាន់ធនធានជំនឿខ្មែររបស់ SWOJ</p>
-      <p class="greeting-en">SWOJ Khmer Witnessing Resources</p>
+      <p class="greeting-km" data-km="ស្វាគមន៍មកកាន់ធនធានជំនឿខ្មែររបស់ SWOJ" data-en="Welcome to SWOJ Khmer Witnessing Resources">ស្វាគមន៍មកកាន់ធនធានជំនឿខ្មែររបស់ SWOJ</p>
+      <p class="greeting-en" data-km="SWOJ Khmer Witnessing Resources" data-en="ធនធានជំនឿខ្មែររបស់ SWOJ">SWOJ Khmer Witnessing Resources</p>
     </div>
     <div class="scroll-hint" aria-hidden="true">
-      <span>ធនធាន</span>
+      <span data-km="ធនធាន" data-en="Resources">ធនធាន</span>
       <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </header>
@@ -31,7 +38,7 @@
   <main>
     <section class="resources-section">
       <div class="section-header">
-        <h1 class="section-title">ធនធាន</h1>
+        <h1 class="section-title" data-km="ធនធាន" data-en="Resources">ធនធាន</h1>
         <p class="section-subtitle">Tap a resource to learn more &amp; download</p>
       </div>
 
@@ -114,8 +121,9 @@
   </main>
 
   <footer class="site-footer">
-    <p>SWOJ Khmer &mdash; ធនធានជំនឿ</p>
+    <p data-km="SWOJ Khmer — ធនធានជំនឿ" data-en="SWOJ Khmer — Witnessing Resources">SWOJ Khmer &mdash; ធនធានជំនឿ</p>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>

@@ -12,9 +12,16 @@
   <header class="resource-page-header">
     <a href="index.html" class="back-btn" aria-label="Back to all resources">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      ត្រឡប់
+      <span data-km="ត្រឡប់" data-en="Back">ត្រឡប់</span>
     </a>
-    <img src="resources/swoj_khmer_logo.png" alt="SWOJ Khmer" class="header-logo-mini">
+    <div class="header-right">
+      <button class="lang-toggle" data-current="km" aria-label="Switch to English">
+        <span class="lang-km-label">ខ្មែរ</span>
+        <span class="lang-sep">·</span>
+        <span class="lang-en-label">EN</span>
+      </button>
+      <img src="resources/swoj_khmer_logo.png" alt="SWOJ Khmer" class="header-logo-mini">
+    </div>
   </header>
 
   <main class="resource-main">
@@ -27,11 +34,15 @@
       >
     </div>
 
-    <h1 class="resource-title">
+    <h1 class="resource-title"
+      data-km="បន្ទាប់ពីមរណភាព ៖ តើយើងនឹងជួបអ្វីបន្ទាប់ពីមរណភាព? (២០២៤)"
+      data-en="After Death: What Will We Meet After Death? (2024)">
       បន្ទាប់ពីមរណភាព ៖ តើយើងនឹងជួបអ្វីបន្ទាប់ពីមរណភាព? (២០២៤)
     </h1>
 
-    <div class="resource-description">
+    <div class="resource-description"
+      data-km="មិ ែបណ័ ណយនះមាន៧ទំព័រ ខ្ែលយាះពុមពជ្ញពណ៌។ មិ ែបណ័ ណយនះបយប្រងៀនតាមប្រពះគមពរីបរសិ ុទធអំពីអែីៗខ្ែលនឹងយកើ យឡើងរួរពីយពលយេើងរ៊ូលមរណភាព។ អនកអាននឹងយ ើញគមពរី ២០ម ខ្ែល ួេ យេើងយប្រ ៀមមលួនសប្រមាប់នងៃរុងយប្រកាេ។ មានរំណុ រសំខាន់៤គឺ៖ ១ បនាទ ប់ពីមរណភាព រ៊ូបកាេយេើងនឹងប្រ ឡប់យៅជ្ញែីវញិ ។ ២ បនាទ ប់ពីមរណភាព ប្រពលឹងវញ្ញិ ាណយេើងនឹងយឡើងយៅ ួបប្រពះជ្ញមាា ស់យែើមបទី ទួលការ ំនុំ ប្រមះ។ ៣ បនាទ ប់ពីមរណភាព ប្រពះជ្ញមាា ស់នឹងោក់យ សអស់អនកខ្ែលមនិ ានខ្ប្របរិ ែនិងទទួលយ ឿប្រពះយេស ៊ូវ។ ៤ បនាទ ប់ពីមរណភាព ប្រពះជ្ញមាា ស់នឹងទទួលសាែ គមន៍អស់អនកខ្ែលានទទួលការយលើកខ្លងយ សាប។"
+      data-en="A 7-page fully-colored Gospel tract presenting Scripture's teaching on what awaits us after death. Readers encounter 20 Bible verses that prepare us for the day ahead. The four key points are: 1) After death, our bodies will return to dust. 2) After death, our souls will rise to meet God for judgment. 3) After death, God will condemn all who have not repented and believed in Jesus. 4) After death, God will welcome all who have received His forgiveness.">
       មិ ែបណ័ ណយនះមាន៧ទំព័រ ខ្ែលយាះពុមពជ្ញពណ៌។ មិ ែបណ័ ណយនះបយប្រងៀនតាមប្រពះគមពរីបរសិ ុទធអំពីអែីៗខ្ែលនឹងយកើ យឡើងរួរពីយពលយេើងរ៊ូលមរណភាព។ អនកអាននឹងយ ើញគមពរី ២០ម ខ្ែល ួេ យេើងយប្រ ៀមមលួនសប្រមាប់នងៃរុងយប្រកាេ។ មានរំណុ រសំខាន់៤គឺ៖
       ១ បនាទ ប់ពីមរណភាព រ៊ូបកាេយេើងនឹងប្រ ឡប់យៅជ្ញែីវញិ ។
       ២ បនាទ ប់ពីមរណភាព ប្រពលឹងវញ្ញិ ាណយេើងនឹងយឡើងយៅ ួបប្រពះជ្ញមាា ស់យែើមបទី ទួលការ ំនុំ ប្រមះ។
@@ -47,15 +58,16 @@
         aria-label="Download PDF"
       >
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        ទាញយក PDF
+        <span data-km="ទាញយក PDF" data-en="Download PDF">ទាញយក PDF</span>
       </a>
     </div>
 
   </main>
 
   <footer class="site-footer">
-    <p>SWOJ Khmer &mdash; ធនធានជំនឿ</p>
+    <p data-km="SWOJ Khmer — ធនធានជំនឿ" data-en="SWOJ Khmer — Witnessing Resources">SWOJ Khmer &mdash; ធនធានជំនឿ</p>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>
